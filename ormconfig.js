@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 module.exports = {
   type: 'postgres',
-  host: 'localhost',
+  host: 'db',
   port: 5432,
   username: 'postgres',
   password: '12345',
-  database: 'postgres',
+  database: 'devtraining',
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/migrations/*.js'],
   cli: {
