@@ -44,7 +44,7 @@ export class CourseService {
       (await Promise.all(dto.tags.map((name) => this.preloadTagByName(name))));
 
     const course = await this.courseRepository.preload({
-      id: +id,
+      id: id,
       ...dto,
       tags,
     });
