@@ -25,6 +25,19 @@ services:
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=devtraining
 
+  dbtest:
+    build: .docker/postgres
+    container_name: devtraining-dbtest
+    restart: always
+    tty: true
+    ports:
+      - "5433:5432"
+    volumes:
+      - .docker/dbdatatest:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=devtraining-dbtest
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: devtraining-pgadmin
